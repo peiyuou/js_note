@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 創建一個對象
+        // var obj = new Object(); 
+
+        // 也可寫成:
+        // 使用對象字面量來創建對象 var obj = {};
+        var obj = {};
+        document.write(obj); //object object
+
+        obj.name = "孫悟空";
+        document.write(obj.name); //孫悟空
+
+
+        // 使用對象面量，可以在創建對象時，直接指定對象屬性
+        // 語法: {屬性名:屬性值,屬性名:屬性值}
+
+        var obj2 = {
+            name: "豬八戒",
+            age: 28,
+            gender: "男",
+            test: { name: "沙和尚" }
+        };
+        document.write(obj2.name); //豬八戒
+        document.write(obj2.age); //28
+        document.write(obj2.gender);//男
+        document.write(obj2.test.name); //沙和尚
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

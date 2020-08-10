@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 創建對象
+        // 使用new關鍵字調用的函數，是構造函數
+        // 構造函數是專門創建對象的函數
+        var obj = new Object();
+        document.write(obj);  //object object     
+        document.write(typeof obj); //object
+
+        // 再對象中保存的值為屬性
+        // 向對象中添加屬性
+        // 語法: 對象.屬性名 = 屬性值;
+
+        // 向obj中添加一個name屬性
+        obj.name = "孫悟空";
+        document.write(obj); //object object   
+        document.write(obj.name); //孫悟空
+
+        // 向obj添加一個gender、age屬性
+        obj.gender = "男";
+        obj.age = 18;
+        document.write(obj); //object object   
+
+        // 讀取對象中的屬性
+        // 語法: 對象.屬姓名
+        document.write(obj.name); //孫悟空
+        document.write(obj.gender); //男
+        document.write(obj.age); //18
+
+        // 如果讀取對象中沒有的屬性，不會報錯，而是反回undefined
+        document.write(obj.hello); //undefined
+
+        // 修改對象的屬性
+        // 語法: 對象.屬性名=新值;
+        obj.name = 'tom'; //原本是''孫悟空'
+        document.write(obj.name); //tom
+
+        // 刪除對象的屬性
+        // 語法: delete 對象.屬性名
+        delete obj.name; //原本是tom
+        document.write(obj.name); //undefined
+
+
+
+
+
+    </script>
+</body>
+
+</html>

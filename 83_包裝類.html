@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 基本數據類型 -> String Number Boolean Null Undefined
+        // 引用數據類型 -> 物件
+
+        // 在JS中為我們提供三個包裝類，通過三個包裝類可以將基本數據類型的數據轉為對象
+        // String()
+        // -可以將基本數據類型String轉換為String對象
+        // Number()
+        // -可以將基本數據類型Number轉換為Number對象
+        // Boolean()
+        // -可以將基本數據Boolean類型轉換為Boolean對象
+
+        // 創建一個Number類型的對象
+        var num = new Number(3);
+        document.write(typeof num, num); //object 3
+        // 但注意，在實際應用中不會使用基本數據類型的對象
+
+
+
+        // 方法、屬性只能添加給物件，無法添加給基本數據類型
+        // 當我們對基本數據類型的值去調用屬性和方法時
+        // 瀏覽器會"臨時"使用包裝類將其轉換為對象，然後在調用對象的屬性、方法
+
+        var s = 123;
+        s = s.toString();
+
+
+
+
+    </script>
+</body>
+
+</html>

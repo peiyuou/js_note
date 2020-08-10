@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2 {
+            color: blue
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <script>
+
+
+        document.write(`<h2>第一題</h2>`);
+        // 印出1-100中所有7的倍數的個數及總和
+        // 我的寫法
+        let total = 0;
+
+        for (i = 1; i <= 100; i++) {
+
+            if (i % 7 == 0) {
+                document.write(`${i} <br>`);
+                total += i;
+            }
+        };
+        document.write(`總和: ${total} <br>`);
+
+        // ----------------------
+
+
+
+
+    </script>
+
+</body>
+
+</html>

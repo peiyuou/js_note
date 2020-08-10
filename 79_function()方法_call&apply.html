@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function fun() {
+            document.write(this.name); //all()和apply()的參數是誰，this就是誰
+
+        }
+        // fun.apply(); //我是fun函數
+
+
+        // call()和apply
+        // 這兩個方法都是函數對象的方法，需要通過函數對象來調用
+        // 當函數對象調用call()和apply()都會調用函數執行
+        // 調用call()和apply()可以將一個對象指定為一個參數
+        // 此時這個對象將會成為函數執行時的this
+
+        var obj = {
+            name: "a",
+            sayName: function () {
+                document.write(this.name + "<br>");
+            },
+        };
+        var obj2 = { name: "b" };
+        // fun.call(obj);//我是fun函數//[object Object]
+        // fun.apply(obj2);//我是fun函數//[object Object]
+
+        obj.sayName(); //a   //this 指向obj
+        obj.sayName.apply(obj2); //b //this 指向obj2
+
+        // -----------------------
+
+        function fun(a, b) {
+            document.write(`a = ${a} <br>`);
+            document.write(`b = ${b} <br>`);
+        }
+
+
+        // call()方 法可以將實參在對象之後一次傳遞
+        fun.call(obj); //a = undefined b = undefined
+        fun.call(2, 3); //a = 2  b = 3
+
+        // apply()方法需要將實參裝到一個陣列中統一傳遞
+        fun.apply(obj, [2, 3]); //a = 2  b = 3
+
+        // 總結:
+        // this的情況
+        // 1.以函數形式調用時，this永遠都是window
+        // 2.以方法的形式調用時，this是調用方法的對象
+        // 3.以構造函數調用時，this是新創的那個對象
+        // 4.使用call和apply調用時，this是指定的那個對象
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

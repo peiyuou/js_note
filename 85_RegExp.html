@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 正則表達式
+        // admin
+        // admin@atguigu.com 
+        // 正則表達式用於定義一些字符串的規則
+        // 計算機可以根據正則表達式，來檢查字符串是否符合規則
+        // 獲取字符串中符合規則的內容取出來
+
+        // 創建正則表達式的對象
+        // 構造函數語法:
+        // var 變量 = new RegExp("正則表達式", "匹配模式")
+        // 第一個變數:可以用來檢查一個字符串內是否有a(變數)，有分大小寫
+        // 第二個變數:可以是
+        //  i->忽略大小寫 
+        //  g->全局匹配模式
+        var reg = new RegExp("a");
+        document.write(reg, typeof reg, "<br>"); //  /a/  object
+
+        var str = "a";
+
+        // 正則表達式的方法:
+        // test() -
+        // 使用個方法可以用來檢查字符串是否符合正則表達式的規則，
+        // 如果符合反回true，否則返回false
+
+        document.write(reg.test(str, "<br>")); //true
+
+
+
+    </script>
+</body>
+
+</html>

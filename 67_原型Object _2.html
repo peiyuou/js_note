@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 創建一個構造函數
+        function MyClass() {
+
+        }
+
+        var mc = new MyClass();
+        document.write(mc.name);//undefined
+
+        // 向MyClass的原型中添加一的name屬性
+        MyClass.prototype.name = 'Judy';
+        mc.age = 18;
+
+        // 檢查對象中是否有某個屬性時，如果對象中有，但原型中有，也會返回true
+        document.write("name" in mc); //true
+
+        // 可以使用對象的hasOwnProperty()來檢查對象自身中是否含有該屬性
+        // 使用該方法，只有當對象自身中含有屬性時才會返回true
+        document.write(mc.hasOwnProperty("name")); //false
+        document.write(mc.hasOwnProperty("age")); //true
+
+
+        // 原型對象也是對像，所以她也有原型
+        // 當我們使用一個對象的屬性或方法時，會在自身中尋找
+        // 自身如果有，則直接使用
+        // 如果沒有則去原型對象中尋找，
+        // 再沒有，則去原型的原型對象中尋找，直到找到object對象的原型
+        // Object對象的原型沒有原型，如果在Object中依然沒有找到，則返回undefined
+
+
+    </script>
+</body>
+
+</html>

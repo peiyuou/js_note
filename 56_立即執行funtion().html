@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // 匿名函數外加一個() ，變函數對象就不會報錯 
+
+        (function () {
+            document.write('hello <br>');
+        })();// 函數對象後面加()，就可調用匿名函數 => 立即執行函數
+        //hello
+
+        // 立即執行函數只會執行一次，因為沒有變量保存他
+
+        // 立即執行函數例子:
+        (function (a, b) {
+            document.write(`a = ${a} <br>`);
+            document.write(`b = ${b} <br>`);
+        })(123, 456); //a = 123  b = 456
+
+    </script>
+</body>
+
+</html>

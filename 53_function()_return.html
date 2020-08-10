@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 創建一個函數
+        function sum(a, b, c) {
+            document.write(a + b + c + "<br>");
+        }
+        // 調用函數
+        sum(1, 2, 3); //6
+
+        // ----------------------
+        // 如果只是想計算出結果，但不需要印出來，
+        // 將計算結果返回(return)給函數
+        function sum2(a, b, c) {
+            let d = a + b + c;
+            return d;
+
+            // 在return後的語句都不會執行
+            alert("hello"); //沒出現
+        }
+        // 調用函數
+        // 建立變數result接收函數計算後的值
+        let result = sum2(10, 20, 30);
+        document.write(result + "<br>"); //60
+
+        // -------------------
+        // 如果沒有指定變數，單寫return
+        //相當於返回undefined
+        // 如果函數中不寫return，也會反回undefined
+        // return後可以接任意類型的值
+        function sum3(a, b, c) {
+            let d = a + b + c;
+            // return;
+        }
+
+        let result3 = sum3(10, 20, 30);
+        document.write(result3); //undefined
+
+
+
+    </script>
+</body>
+
+</html>

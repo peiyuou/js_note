@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // 創建一個對象
+        var obj = new Object();
+
+        // 向對向添加屬性
+        obj.name = '孫悟空';
+
+
+        // 屬性名不強制要求遵守標誌符的使用規範
+        // 但是盡量還是按照規範
+        obj.var = 'hello';
+        document.write(obj.var); // hello
+
+        // 如果要使用特殊的屬性名，不能採用.的方式操作
+        // 需要使用另一種方式
+        // 語法: 對象["屬性名"] = 屬性值
+        // obj.123 = 789;
+        // document.write(obj.123); //報錯
+        // 改為
+        obj["123"] = 789;
+        document.write(obj["123"]); //789
+
+        // 使用[]這種形式去操作性，更加的靈活
+        // 在[]中可以直接傳遞一個變量，這樣變量值是多少就會去讀取那個屬性
+        obj['nihao'] = "你好";
+        var n = "123";
+        document.write(obj[n]); //789
+        // --------
+        obj['nihao'] = "你好";
+        var n = "nihao";
+        document.write(obj[n]); //你好
+
+
+        // 屬性值
+        // js對象的屬性值可以是任意的數據類型
+        // 甚至也可以是一個對象
+
+        // 創建一個對象
+        var obj2 = new Object();
+        obj2.name = "豬八戒";
+
+        // 將obj2設置為obj的屬性
+        obj.test = obj2;
+        document.write(obj.test);//object object //豬八戒
+        document.write(obj.test.name);//豬八戒
+
+        // in運算符
+        // 通過該運算符，可以檢查對象中是否有指定屬性
+        // 如果有則返回true, 沒有則返回false
+        // 語法: "屬性名" in 對象
+        // 檢查obj是否有test2的屬性
+        document.write("test2" in obj);//false
+        document.write("test" in obj); //true
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

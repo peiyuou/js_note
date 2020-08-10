@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 創建一個構造函數，專門用來創建person對象
+        // 構造函數就是一個普通函數，創造方式和普通函數沒有差別
+        // 不同的是構造函數習慣首字母大寫
+
+
+        // 構造函數和普通函數區別就是調用方式的不同
+        // 普通函數是直接調用，構造函促需要使用new關鍵字來調用
+
+        // 構造函數的執行流程
+        // 1.立刻創建新的對象
+        // 2.將新建的對象設值為函數中的this，在構造函數中可以使用this來引用新建的對象
+        // 3.逐行執行函數中的代碼
+        // 4.將新建的對象作為返回值返回
+
+        // 使用同一個構造函數創建出的對象，稱為一類對象，也將一個構造函數稱為一類
+        // 將通過一個構造函數創建的對象，稱為該類的實例
+
+
+        // this的情況，
+        // 1.當以函數形式調用時，誰調用方法this就是誰
+        // 2.當以構造函數的形式調用時，this就是新創的那個對向
+        // 3.當以函數的形式調用時，this是window
+
+
+
+        function Person() { // 構造函數 字母記得大寫
+            this.name = '孫悟空'; //this就是per2對象
+            // this = 下面的var per
+        }
+
+        // 加上new
+        var per = new Person();
+        document.write(per.name); //孫悟空
+
+
+        var dog = new Dog(); //Dog{}
+
+        // 使用instanceof可以檢查一個對象是否是一個類的實例
+        // 語法: (對象 instanceof 構造函數) //per是Person類中的實例嗎?
+        // 如果是，返回true
+        document.write(per instanceof Person); //true
+        document.write(dog instanceof Person); //false
+
+
+
+
+    </script>
+</body>
+
+</html>

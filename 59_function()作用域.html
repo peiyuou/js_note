@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 題目練習:
+        // var a = 123;
+        // function fun() {
+        //     document.write(a);
+        // }
+
+        // fun(); //123
+
+        // ----------------
+
+        // var a = 123;
+        // function fun() {
+        //     document.write(a);
+        //     var a = 456;
+        // }
+        // fun(); //456錯 //正解: undefined 有先聲明但未附值
+        // document.write(a); //123 
+
+        // ----------------
+
+        // var a = 123;
+        // function fun() {
+        //     document.write(a); //找不到區域變數，往全域找，先找到a=123
+        //     a = 456; //這已是全域變數 //覆蓋了全域的a值
+        // }
+        // fun(); //456錯 //正解:123
+        // document.write(a); //123錯 //正解:456
+
+        // ----------------
+
+        // var a = 123;
+        // function fun(a) {
+        //     document.write(a);
+        //     a = 456; //給區域變數附值
+        // }
+        // fun(); //undefined
+        // document.write(a); //456錯 //正解:123
+
+        // ----------------
+
+        // var a = 123;
+        // function fun(a) {
+        //     document.write(a);
+        //     a = 456;
+        // }
+        // fun(789); //789
+        // document.write(a); //123
+        //    ---------------------------------
+
+        // 函數作用域
+        // 調用函數時，創建函數作用域，函數作用完畢後，函式作用域銷毀
+        //每調用一次函數，就會創建新的函數作用域，他們是互相獨立的。
+        // 函數作用域中，可以訪問到全局作用域的變量
+        // 在全局作用域中，無法訪問到函數作用域的變量
+
+        // 當有同名的全域&區域變數時， 在函數作用域中操作變量時，會先在自身作用域中尋找最近的變數
+        // 在函數中如果要使用全域變數，可以使用window.變數
+
+        // 在函數中，變量如果沒有加var，就會成為全域變數
+
+
+
+        // 創建一個全域變數
+        var a = 10;
+
+        function fun() {
+
+            // 區域變數
+            var b = 20;
+            document.write(a);
+        }
+
+        // document.write(b); //報錯
+
+        fun(); //10//第一個作用域
+        fun(); //10//第二個作用域
+        fun(); //10//第三個作用域
+
+
+    </script>
+</body>
+
+</html>

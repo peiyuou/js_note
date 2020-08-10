@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // alert('hi');
+        function fun() {
+            // alert('開始執行');
+            for (var i = 0; i < 5; i++) {
+                // document.write(i)
+                if (i == 2) {
+                    break;  //0,1,2 //退出當前循環 
+                    // continue; //0,1,3,4 //跳過當次循環
+                    // return;  //0,1 // 結束整個函數
+                }
+                document.write(i, '<br>');
+            };
+            // alert('執行結束');
+        }
+
+        fun();
+
+        // --------------------------
+        // 返回值可以是任意的數據類型
+        // 也可以是一個對象&函數
+        function fun2() {
+            // 是Number
+            // return 10;
+
+            // 是對象
+            var obj = { name: '沙和尚' };
+            return obj; //object object
+        }
+
+        let a = fun2();
+        document.write(a.name);
+
+        // --------------------------
+        function fun3() {
+            // 在函數內再聲明一個函數
+            function fun4() {
+                alert('我是fun4');
+            }
+            // fun4(); //記得先把fun4調用出來--------------------｜
+            // 　　　　　　　　　　　　　　　　　　　　　　　　　　｜
+            // Q:return fun4() & return fun4 的差別?　　　　　　｜
+            //A:　　　　　　　　　　　　　　　　　　　　　　　　　｜
+            // return fun4() //alert 我是fun4 //冰淇淋　　　　Ｖ　　
+            return fun4 // function fun4() { alert('我是fun4'); } //冰淇淋機
+        }
+
+        // fun3();
+
+        let b = fun3();
+        // document.write(b); //alert 我是fun4 
+        // 也可寫成
+        // b();
+        // 也可寫成
+        fun3()();
+
+
+    </script>
+</body>
+
+</html>

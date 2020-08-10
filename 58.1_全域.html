@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 作用域 --變量的作用範圍
+        // 1.全域變數
+        // 直接編寫在script標籤中的變數，都是全域變數
+        // 在頁面打開時創建，在關閉頁面時銷毀
+        // 在全局作用域中有一個全局對象window，
+        // window代表一個瀏覽器的窗口，可以直接使用。
+        // 在全局作用域中，創建的變量都會做為window的屬性保存
+        // 前提: !!變數要用var 而不是let!!
+
+
+        // 2.區域變數
+
+
+        // 全域變數
+        var str = 'abc';
+        // for (n in window) {
+        //     document.write(n + "<br>");
+        // };
+        document.write(window.str); //abc
+
+
+        function fun() {
+            // 在函數裡定義的變數，是區域變數
+            let a = 123;
+            document.write(a);
+        }
+        fun(); //123
+        window.fun(); //123
+        // document.write(a); //錯誤
+
+    </script>
+</body>
+
+</html>

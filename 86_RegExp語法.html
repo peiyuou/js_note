@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // var reg = RegExp();
+        // ↓↓↓↓↓↓↓↓↓
+        // 也可使用字面量來創建正則表達式
+        // 語法: var 變量 = /正則表達式/匹配模式;
+        // 但使用構造函數創建更加靈活
+
+        // var reg = RegExp("a", "i"); //忽略大小寫尋找a
+        // document.write(reg.test("abc")); //true
+        // ↓↓↓↓↓↓↓↓↓
+        reg = /a/i;
+        document.write(reg.test("abc")); //true
+
+        // --------------
+        // 創建一個正則表達式，檢查字符串內是否有a"或"b
+        // 用|表示或者的意思
+
+        reg2 = /a|b/;
+        document.write(reg2.test("agg")); //true
+
+        // 創建正則表達式來檢查字符串內是否有字母
+        // reg2 = /a|b|c|d|e|f|g|h|i/; //方法太笨。淘汰
+        // 正解: 用[]， [a-b] == a|b
+        // [a-z]任意的小寫字母
+        // [A-Z]任意的小寫字母
+        // [A-z]任意字母    
+        reg = /[a-z]/
+
+        // ---------------------------
+        // 檢查字符串中是否有abc或adc或aec
+        reg = /a[bde]c/
+
+         // ---------------------------
+        //  [^ ]除了
+        // reg = /[^ab]/  除了ab以外的都返回true
+
+
+
+
+    </script>
+
+</body>
+
+</html>

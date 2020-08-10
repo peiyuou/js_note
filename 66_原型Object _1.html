@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 原型prototype (建構函數中的公共區域)
+
+        // 我們所創建的每一個函數(函數=對象)，解析器都會向函數中添加一個屬性 prototype
+        // 也就是說每個函數都有自己的prototype屬性
+        // 這個屬性對應著一個對象，這個對象就是原型對象
+        // 如果是作為普通函數調用，prototype沒有任何作用
+        // 如果函數當作構造函數調用，他所創建的對象中都會有一個隱含的屬性
+        // 指向該構造函數的原型對象，我們可以通過__proto__來訪問該屬性
+
+        // 原型對象就相當於一個公共區域，所有同一類的實例都可以訪問到這個原型對象
+        // 我們可以將對象中共有的內容，統一設置到原型對象中
+
+        // 當訪問對象的屬性或方法時，會先在自身對象中尋找，如果有則直接使用
+        // 如果沒有則去原型對象中尋找
+
+
+        // 以後創建構造函數時，可以將這些對象共有的屬性和方法，統一添加到構造函數的原型中
+        // 這樣不用分別為每一的對象添加，也不會影響到痊癒作用域。
+
+
+
+        function MyClass() { }
+
+        // 向MyClass的原型中添加屬性a
+        MyClass.prototype.a = 123;
+
+        // 向MyClass的原型中添加一個方法
+        MyClass.prototype.sayHello = function () {
+            document.write('you there');
+        }
+
+        var mc = new MyClass();
+        var mc2 = new MyClass();
+
+        // document.write(MyClass.prototype); //[object Object]
+        // document.write(mc.__proto__); //[object Object]
+        document.write(mc.a); //123 //當mc本身無a屬性 ->往原型對象中尋找
+
+        // 向mc中添加a屬性
+        mc.a = "我是mc中的屬性";
+        document.write(mc.a); //我是mc中的屬性
+        mc.sayHello(); //you there
+
+
+    </script>
+
+</body>
+
+</html>

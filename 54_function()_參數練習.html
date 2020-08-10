@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 定義一函數，判斷數字是否為偶數，如果是返回true，否則返回false
+        function isOu(num) {
+            if (num % 2 == 0) {
+                return true;
+            } else {
+                return false;
+            };
+        }
+        let result = isOu(3);
+        document.write(result); //false;
+
+        // 精簡版(優雅版)
+        function isOu2(num) {
+            return num % 2 == 0;
+        }
+
+        let result2 = isOu2(3);
+        document.write(result2); //false
+
+        // ---------------
+        // 定義一個函數，可以根據半徑計算圓的面積，並返回計算結果
+        function circle(r) {
+            return r * r * 3.14;
+        }
+
+        let result3 = circle(10);
+        document.write(result3 + "cm2");
+
+        // ------------------
+        // 創建一個函數，可以在控制台中輸出一個人的訊息
+        function message(name) {
+            return "hello" + name;
+        }
+
+        let result4 = message('Judy'); //字串記得加引號
+        document.write(result4);
+
+        // ------------------
+        // 當遇到多個參數時﹐創建一個對象，通過對象傳遞
+        // 實參可以是一個對象
+        var obj = {
+            name: '孫悟空',
+            age: 18,
+            gender: '男',
+            address: '花果山'
+        };
+
+        function sayHello(o) {
+            document.write(`我是${o.name}，
+            今年我 ${o.age}，我是一個 ${o.gender}生，
+            住在${o.address}`);
+        }
+
+        sayHello(obj);
+
+        // ------------------
+        // !!常用到!!
+        // 實參可以是一個函數(因為函數=對象)
+
+        function message(name) {
+            return a + b;
+        }
+
+
+        function fun(a) {
+            document.write(`a=${a}`)
+        }
+        fun(message); //a=function message(name) { return "hello" + name; }
+
+        // Q:fun(message) 與 fun(message())的差別?
+        // A: fun(message) --函數對象 --相當於直接使用函數對象 --給你製冰機
+        //    fun(message()) --調用函數 --相當於使用函數的返回值 --給你冰淇淋
+
+
+
+
+
+    </script>
+</body>
+
+</html>

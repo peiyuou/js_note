@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var str = "1a2b3c4d5e6f";
+
+        // split()可以將字符串拆分成陣列
+        // document.write(str.split("c");//1a2b3,4d5e6f
+        document.write(str.split(/[a-z]/));//1,2,3,4,5,6,
+
+
+        // search()可以搜索字符串中含有指定內容
+        // 如果搜索指定內容，則會返回第一次出現的索引，如果沒有搜索則返回-1
+        // 它可以接受一個正則表達式作為參數，然後會根據正則表達式去檢索字符串
+        var star = "hello abc hello aec hello afc";
+        // 搜尋字符串中是否含有"abc" 或 aec 或 afc
+        document.write(str.search("abc")); //-1
+
+    </script>
+
+</body>
+
+</html>

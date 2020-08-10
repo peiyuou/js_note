@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 一般都是用for循環去遍歷陣列，js3替我們提供了一個方法來遍歷陣列
+        // foreach() --只支援ie8以上的瀏覽器
+
+        // 創建一個陣列
+        var arr = ['孫悟空', '豬八戒', '沙和尚'];
+
+
+
+        // forEach()需要一個函數作為參數
+        // 像這種函數，由我們創建但不由我們調用，稱之為回調函數
+        // 陣列中有幾個元素，函數就執行幾次
+        // 每次執行時，瀏覽器會將遍歷到的元素以實參的形式傳遞進去
+        // 以實參的形式傳遞進來，可以來定義形參來讀取這些內容。
+        // 瀏覽器會在回調函數中傳遞三個參數(v,i,a)
+
+        arr.forEach(function (a) {
+            // document.write('hello');//hellohellohello(共五次)
+            document.write(a); //孫悟空豬八戒沙和尚
+
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

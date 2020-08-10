@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // {傳值}
+        // 基本數據類型
+        // String Number Boolean Null Undefined
+
+        // 引用數據類型
+        // Object
+
+        // js中的變量都是保存到棧內存中的
+        // 基本的數據類型的值直接在棧內存中儲存
+        // 值與值之間是獨立存在，修改一個變量不會影響其他變量
+        var a = 123;
+
+        // b複製a的值給自己後，就跟a沒有任何關係
+        var b = a;
+        a++
+
+        document.write("a = " + a + "<br>"); //124
+        document.write("a = " + b + "<br>"); //123
+
+        //   ---------------
+        // {傳址}
+        // 對象是保存到堆內存中的，每創建一個新的對象，就會在堆內存中闢出一個新的空間
+        // 而變量保存的是對像的內存地址(對象的引用)，如果兩個變量保存的是同一個對象引用(ex:var obj = new Object(); ->var obj2 = obj; )，
+        // 當一個變量修改屬性時，另一個也會受到影響
+
+        // 自己備註:對象的記憶體是共有空間，當共有空間內的值改變，
+        // 使用此值的變數也會改變
+        var obj = new Object();
+        obj.name = "孫悟空";
+        var obj2 = obj;  //!!obj與obj2共用一個堆內存!!
+        obj2.name = "豬八戒"; //當obj或obj2屬性值改變=改變堆內存內的值
+
+        // 修改obj.name的屬性
+        // obj.name = "豬八戒"
+        // obj.name = 3
+
+        document.write(obj.name); //孫悟空  //豬八戒
+        document.write(obj2.name); //孫悟空 //豬八戒
+
+        // Q:設置obj2為null時，obj也會變null嗎?
+        obj2 = null;
+        document.write(obj); //object object
+        document.write(obj2); // null
+        // A: 當其中一個變量賦予新值後，連結就會斷開，故不會影響上一個值
+
+
+        // 自己結論: 對象的屬性值會動一髮牽全身
+        //         ex: obj.name = "孫悟空"; obj2 = "豬八戒";
+        //         當obj.name = 3; ， obj2 = 3;
+        // 但是當變數本身值改變，連結就會斷開
+        // obj2 = null;
+        // document.write(obj); //object object
+        // document.write(obj2); // null
+
+
+        var c = 10;
+        var d = 10;
+        // 判斷c和d是否相等
+        document.write(c == d); // true
+
+        //   ------------ 
+        // 每次開一個new object()就會開啟一個新的堆內存空間
+        var obj3 = new Object();  //--堆內存1
+        var obj4 = new Object(); //--堆內存2
+        obj3.name = "沙和尚";
+        obj4.name = "沙和尚";
+
+        document.write(obj3); //object object 值相同
+        document.write(obj4); //object object 值相同
+        document.write(obj3 == obj4); // false
+        // 兩個雙胞胎長的一樣，但仍是兩個個體
+
+
+        // 結論:
+        // 當比較兩個基本數據類型時，就是比較值
+        // 而比較兩個引用數據類型時，他是比較對象的內存地址
+        // 如果對象是一膜一樣的，但是地址不同，也會返回false
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

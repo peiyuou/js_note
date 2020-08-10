@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        /*JS有三種對象:
+
+        內建對象:常用的方式
+
+        宿主對象
+
+        自定義對象 -之前講的都是自定義，但它是非主流用法
+
+        ------------------
+        陣列(Array):也是一個對象
+        -和普通的對象功能類似，也是用來儲存一些值
+        -不同的是普通對象是使用字串作為屬性名
+         ex:var obj = new Object();
+         obj.name = "Judy";   //name ->用字串作為屬性名
+        -而陣列是用數字來做為索引(index)操作元素
+        -索引，從0開始的整數就是索引
+        陣列的儲存性能比普通對象要好，在開發中經常使用陣列來儲存一些數據
+
+
+        */
+
+        // 創造陣列對象
+        var arr = new Array();
+        console.log(arr);//[]
+        document.write(typeof arr); //object
+
+        // 向陣列中添加元素
+        // 語法: 數組[index] = 值;
+
+
+        arr[0] = 10;
+        document.write(arr[0]); //10
+
+        arr[1] = 33;
+        document.write(arr); //10,33
+
+        arr[2] = 22;
+        document.write(arr); //10,33,22
+
+        // 讀取陣列中的元素
+        document.write(arr[2]) //22
+
+        // 如果讀取到不存在的index，返回undefined
+        document.write(arr[3]) //undefined
+
+
+        // 獲取陣列長度 陣列.length
+        document.write(arr.length) //3
+
+        // Q:跳號會怎麼影響length?
+        arr[10] = 100;
+        document.write(arr.length) //11
+        document.write(arr) //10,33,22,,,,,,,,100
+        // 盡量不要創建非連續的陣列
+
+        // 修改length
+        // 如果修改的length大於原本長度，則多出部分會空出來
+        // 如果Length小於原本長度，則多出的元素會被刪除
+        arr.length = 20;
+        document.write(arr.length) //20
+        document.write(arr) //10,33,22,,,,,,,,100,,,,,,,,,
+
+        // 向數組會後一個位置添加元素
+        arr[arr.length] = 70;
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

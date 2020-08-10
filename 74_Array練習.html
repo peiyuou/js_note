@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        //  -------------------------
+        // 練習
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.toString = function () {
+            return "Person[name = " + this.name + ",age=" + this.age + "]"
+        }
+
+        // 創建一個Person對象
+        var per = new Person('孫悟空', 18);
+
+        // document.write(per); //Person[name = 孫悟空,age=18]
+
+        var per1 = new Person('紅', 18);
+        var per2 = new Person('橙', 28);
+        var per3 = new Person('黃', 8);
+        var per4 = new Person('綠', 16);
+        var per5 = new Person('藍', 58);
+
+        // 將這些person對象放入到一個陣列中
+
+        var perArr = [per1, per2, per3, per4, per5];
+        // document.write(perArr); //Person[name = 孫悟空,age=18]Person[name = 紅,age=18],Person[name = 橙,age=28],Person[name = 黃,age=38],Person[name = 綠,age=48],Person[name = 藍,age=58]
+        // 創建一個函數，可以將滿18歲的人提取出來，並放到新的數組中並返回
+
+        function getAdult(arr) {
+            // 創建一個新陣列 
+            var newARR = [];
+            for (let i = 0; i < arr.length; i++) {
+                var p = arr[i]; //
+
+                // 判斷Person對象的age是否大於等於18
+                if (p.age >= 18) {
+                    // 如果大於等於18，則將對向菸加到newArr中
+                    newArr.push(p);
+                }
+            }
+            return newArr;
+        };
+
+        getAdult(perArr);
+
+
+
+
+        // var result = getAdult(perArr);
+        // document.write(result); //Person[name = 黃,age=8],Person[name = 綠,age=16],Person[name = 藍,age=58]
+
+
+
+
+    </script>
+</body>
+
+</html>

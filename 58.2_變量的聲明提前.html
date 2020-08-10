@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        var a = 123;
+        document.write(a);//123
+
+        // 如果變數前不加var，一樣可以使用
+        // 只是變成window.變數
+        b = 456;  // = window.b = 456;
+        document.write(b); //456
+
+
+        // 變量聲明提前
+        // !!使用var關鍵字聲明變量，會在所有的代碼執行前被聲明!!，
+        // 所以就算var變量放在執行程式後面，程式不會報錯
+
+        document.write(c); //456
+        // var c = 101112;  // undefined
+        c = 101112; //報錯
+
+        // ---------------------
+        // 函數的聲明提前
+        // 1.使用函數聲明形式function fun(){}，會在所有代碼執行前就創建
+        //使用函數表達式var fun2 = function () {}，不會被提前聲明，所以不能在聲明前調用
+
+        //函數聲明前先調用
+        fun(); //我是fun函數 
+        fun2(); //報錯
+
+        function fun() {
+            document.write('我是fun函數');
+        }
+
+        var fun2 = function () {
+            document.write('我是fun2函數');
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

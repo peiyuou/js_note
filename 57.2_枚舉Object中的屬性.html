@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // 自訂物件&屬性
+        let obj = {
+            name: "豬八戒",
+            age: 18,
+            gender: '男',
+            address: '花果山'
+        };
+
+        // 但有些物件是已經預設好給我們ex: document.write
+        // 但如何知道document中有那些屬性呢?
+        // 使用for in 語句
+        // 語法: for(let 變量 in 對象){}
+
+        for (let n in obj) { //n是變量
+            // document.write(n);//name age gender address
+            document.write(obj[n]); //豬八戒 18 男 花果山
+        }
+
+        // for (let n in document) {
+        //     document.write(n + "<br>");
+        // } //(所有document的屬性)
+
+
+
+
+
+    </script>
+</body>
+
+</html>

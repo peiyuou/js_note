@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 創建三個對象
+        // var obj = {
+        //     name: '孫悟空',
+        //     age: 18,
+        //     gender: '男',
+        //     sayName: function () {
+        //         document.write(this.name);
+        //     }
+        // };
+
+        // var obj2 = {
+        //     name: '豬八戒',
+        //     age: 28,
+        //     gender: '男',
+        //     sayName: function () {
+        //         document.write(this.name);
+        //     }
+        // };
+
+        // var obj2 = {
+        //     name: '沙和尚',
+        //     age: 38,
+        //     gender: '男',
+        //     sayName: function () {
+        //         document.write(this.name);
+        //     }
+        // };
+
+        // obj.sayName(); //孫悟空
+
+        // 上面三個對象打的方式太繁瑣，
+        // 下面是比較優雅的寫法
+        // 使用工廠方式創建對象
+
+        function createPerson(name, age, gender) {
+            // 創建一個新的對象
+            var obj = new Object();
+            // 向對象中添加屬性
+            obj.name = name;
+            obj.age = age;
+            obj.gender = gender;
+            obj.sayName = function () {
+                document.write(this.name);
+            }
+
+            // 將新的對象返回
+            return obj;
+        }
+
+        var obj2 = createPerson('豬八戒', 28, '男');
+        var obj3 = createPerson('白骨精', 16, '女');
+        var obj4 = createPerson('蜘蛛精', 18, '女');
+
+        document.write(obj2.name); //豬八戒
+        document.write(obj3.name); //白骨精
+        document.write(obj4.name); //蜘蛛精
+
+        obj4.sayName(); //蜘蛛精
+
+
+
+        // 用來創建狗的對象
+        function createDog(name, age) {
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.sayHello = function () {
+                document.write('汪汪');
+            }
+            return obj;
+        }
+
+        // 創建一個狗的對象
+        var dog = createDog('旺財', 3);
+        dog.sayHello(); //汪汪
+
+
+    </script>
+</body>
+
+</html>

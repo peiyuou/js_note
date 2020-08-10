@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // Date對象-在JS中表示一個時間
+
+        // 創建一個Date對象
+        // 如果使用構造函數創建Date對象，則會封裝當前代碼執行的時間
+        var d = new Date();
+        document.write(d, "<br>"); //(此刻時間)Thu Jul 30 2020 17:50:39 GMT+0800 (台北標準時間)
+
+
+        // 創建一個指定的時間對象
+        // 需要在構造函數中傳遞一個表示時間的字串作為參數
+        // 日期格式: 月 / 日 / 年 時: 分: 秒
+        var d2 = new Date("12/13/2016 11:10:30");
+        document.write(d2, "<br>"); //Sat Dec 03 2016 11:10:30 GMT+0800 (台北標準時間)
+
+
+        // getDate獲取:幾號
+        document.write(d2.getDate(), "<br>"); //13(號)
+
+        // getDay獲取:禮拜幾
+        // 週日-- > 返回0
+        document.write(d2.getDay(), "<br>"); //2
+
+        // getMonth獲取:月份
+        // 會返回0-11的值，0表示一月
+        // 所以返回值會是當前月份 - 1
+
+        // var d2 = new Date("12/13/2016 11:10:30");
+        document.write(d2.getMonth(), "<br>"); //11
+
+        // getFullYear獲取:年分
+        // 切記不要再用getYear
+        document.write(d2.getFullYear(), "<br>"); //2016
+
+        // --時分秒都是以此類推--
+
+        // getTime獲取:當前日期的時間戳
+        // 時間戳:指的是格林威治標準時間的1970年1月1日 0時0分0秒，到此刻所花費的毫秒數
+        // 一秒=1000毫秒
+        // document.write(d2.getTime(), "<br>"); //1481598630000
+
+        // Date.now()獲取當前時間戳
+        // document.write(Date.now(), "<br>"); //1596106044606
+
+        // 利用時間戳來測試代碼執行的性能
+        let start = Date.now();
+        // ex:測試for循環花費了多少時間
+        for (let i = 0; i < 100; i++) {
+            document.write(i, "<br>");
+        };
+        let end = Date.now();
+        document.write(end - start);
+
+
+
+    </script>
+</body>
+
+</html>

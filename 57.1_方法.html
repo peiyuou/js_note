@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 創建一個對象
+        let obj = new Object();
+        obj.name = "孫悟空";
+        obj.age = 18;
+
+        // 對象的屬性值可以是任何的數據類型
+        // 可以是個函數
+        obj.sayName = function () {
+            document.write(obj.name)
+        };
+
+        // 調用函數(對象的方法)
+        obj.sayName(); //孫悟空 
+
+        // 如果一個函數作為一個對象的屬性保存，
+        // 我們稱這個函數視為這個(對象的方法)
+        // 調用函數就說調用(對象的方法)
+
+        // 但他只是名稱上的區別
+
+
+
+        //   ------------
+        let obj2 = {
+            name: "豬八戒",
+            age: 18,
+            sayName: function () {
+                document.write(obj2.name);
+            }
+        };
+
+        obj2.sayName(); //豬八戒
+
+
+    </script>
+</body>
+
+</html>

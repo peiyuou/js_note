@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 創建一個Person構造函數
+        // -在Person構造函數中，為每一個對象都添加了一個sayName方法
+        // 目前我們的方法是在構造函數內部創建的，
+        // 也就是所有實例的sayName都是唯一的
+        // 這樣就導致了構造函數執行一次就會重複創造新的方法，
+        // 這是完全沒有必要的，可以使所有的對象共享同一個方法
+        // 方法，將方法從構造函數中提出
+
+        //構造函數字首大寫
+        // 調用時要加new
+        // this -->var per
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+            this.sayName = fun;
+            // this.sayName = function () {
+            //     document.write(`大家好，我是 ${this.name}`);
+            // } //拉到構造函數外使用
+        }
+
+
+        function fun() {
+            document.write(`大家好，我是 ${this.name}`);
+        }
+        // 將方法從構造函數中提出
+        // 在全域中有需要的構造函數可以直接調用 this.sayName = fun;
+        // 但是將函數定義在全局作用域，汙染了全局作用域的命名空間
+
+        // 創建一個Person的實例
+        var per = new Person('judy', 18, '女'); //構造函數調用時需要一個變數接值
+        var per2 = new Person('joseph', 19, '男');
+        // document.write(per.name); //judy
+        per.sayName(); //大家好，我是 judy
+        // document.write(per2.name); //judy
+        per2.sayName(); //大家好，我是 joseph 
+
+    </script>
+
+
+
+</body>
+
+</html>

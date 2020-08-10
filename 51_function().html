@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 函數function
+        // 函數也是一個對象
+        // 函數中可以封裝一些功能(代碼)，在需要時可以執行這些功能
+
+        // 創建一個函數對象
+        var fun = new Function();
+        document.write(fun); //function anonymous( ) { }
+        document.write(typeof fun); //function
+
+
+
+        // !!在實際開發中很少使用建構函數來創造函數對象!!
+        // 可以將要分裝的代碼String的形式傳給構造函數
+        var fun2 = new Function("document.write('hello')"); //這種方式不好
+        document.write(fun2);//function anonymous( ) { document.write('hello') }
+        // 分裝到函數中的代碼不會立即執行
+        // 函數中的代碼會在函數調用的時候執行
+        // 調用函數語法:函數對象()
+        // 當調用函數時，函數中封裝的代碼會按照順序執行
+        fun2();//hello
+
+        // 對象.屬性名 = 屬性值
+        fun2.hello = "你好";
+        document.write(fun2.hello); //你好
+
+
+        // !!常用的函數!!
+        // 使用函數聲明來創建函數
+        // 語法: function 函數名(參數1,參數2){
+        // 語句
+        // };
+
+        function fun3() {
+            document.write("哈哈哈哈");
+        };
+        // 調用fun3
+        fun3(); //哈哈哈哈
+
+        // 使用函數表達式來創建一個函數
+        // var 函數名 = function (參數1, 參數2) { };
+        // function(){} //匿名函數 ---沒有名字，無法呼叫
+        // 解決:創一個變量保存函數
+        var fun4 = function () {
+            document.write("我是匿名函數中的代碼");
+        }
+        // 調用fun4
+        fun4(); //我是匿名函數中的代碼
+
+
+
+        // 總結:
+        // 共兩種調用方式
+        // 方式1.函數聲明: function 函數名(參數1,參數2){}
+        // 方式2.函數表達式: var 函數名 = function () { }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

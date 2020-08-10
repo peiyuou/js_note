@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Math和其他對象不同，他不是構造函數
+        // 它屬於一個工具類，不用創建對象，裡面封裝了數學運算相關的屬性和方法
+
+        // 常數都是大寫
+        // document.write(Math.PI);//3.141592653589793
+
+
+        // abs()可以用來計算一個數的絕對值
+
+        // Math.ceil();
+        // 可以對一個數進行向上取整，小數只要有值就自動+1
+
+        // Math.floor();
+        // 可以對一個數進行向下取整
+
+        // Math.round();
+        // 可以對一個數進行四捨五入
+
+        // Math.random()
+        // 可以生成0-1之間的隨機數
+
+        // 找出0-10的隨機整數
+        for (var i = 0; i < 10; i++) {
+            document.write(Math.round(Math.random() * 10), "<br>");
+        };
+
+        document.write("<hr>");
+
+        // 找出1-10的隨機整數
+        // 生成一個x-y之間的隨機數
+        // Math.round(Math.random() * (y-x)) + x
+
+        for (var i = 0; i < 10; i++) {
+            document.write(Math.round(Math.random() * 9) + 1, "<br>");
+        };
+
+        // Math.max()可以獲取多個數中的最大值
+        // Math.min()可以獲取多個數中的最小值
+        document.write(Math.max(1, 5, 6, 88, 6)) //88
+
+        // Math.pow(x, y);
+        // 返回x的y次方
+        document.write(Math.pow(2, 2)); //4 (2的2次方)
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

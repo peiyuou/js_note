@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 創建一個字符串
+        var str = "Hello there";
+
+        // 在底層字符串是以字符陣列的形式保存
+        document.write(str.length, "<br>"); //11 (加空白鍵 )
+        document.write(str[0], "<br>"); //H
+
+        // charAt()
+        // 可以根據索引返回陣列中指定位置的字符
+        document.write(str.charAt(4), "<br>"); //o
+
+
+        // charCodeAt()
+        // 獲取指定位置字符的編碼(Unicode編碼)
+        document.write(str.charCodeAt(4), "<br>"); //111
+
+
+        // indexOf()
+        // 可以檢索一個字符串是否含有指定內容
+        // 如果字符串中含有該內容，會返回其第一次出現的索引
+        // 如果沒有找到指定內容，返回-1
+        // 可以指定第二參數，用來指定開始查找的位置
+
+        // var str = "Hello there";
+        document.write(str.indexOf("h", 1));//7
+
+
+
+
+    </script>
+</body>
+
+</html>

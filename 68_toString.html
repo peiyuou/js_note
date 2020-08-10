@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 建立一個構造函數
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+
+        };
+
+        // 創建一個Person的實例
+        var per = new Person("Judy", 18, '女');
+        var per2 = new Person("Joseph", 28, '男');
+
+
+        document.write(per); //[object Object]
+        // 揭密為什麼會返回[object Object]!!
+        // 答:當我們直接在頁面中打印一個對象時，實際上是輸出對象的toString()方法的返回值
+        // 所以document.write(per);的結果會與document.write(per.toString());一樣
+        document.write(per.toString());//[object Object]
+        // 而toString()是在構造函數內的原型的原型物件內的屬性
+        // 如果我們希望在輸出對象時不輸出[object Object],可以為對象的原型對象添加一個toString()方法
+        Person.prototype.toString = function () {
+            return "我是一個快樂的小person";
+        }
+
+        document.write(per); //我是一個快樂的小person
+        document.write(per2);//我是一個快樂的小person
+    </script>
+</body>
+
+</html>

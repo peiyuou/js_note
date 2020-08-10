@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 在調用函數時，瀏覽器每次都會傳遞兩個隱含的參數
+        // 1.函數的上下文對象this
+        // 2.封裝實參的對象arguments
+        // arguments是一個類(似)陣列對象，也可以透過索引操作數據，也可以獲取長度
+        // 在調用函數時，我們所傳遞的實參都會在arguments中保存
+        // arguments.length可以獲取時參的長度(數量)
+
+        // arguments裡還偶另一個屬性叫做callee
+        // 這個屬性對應一個函數對象，就是當前正在執行的函數對象
+
+
+        function fun() {
+            // document.write(arguments); //[object Arguments]
+
+            // 用instanceof測試arguments是不是屬於Array的類型
+            document.write(arguments instanceof Array); //false
+
+            // 用isArray檢查arguments是不是陣列
+            document.write(arguments instanceof Array);//false
+            document.write(arguments.length); //3
+
+            // 用arguments[i]陣列找值，即使不定義實參也可以通過arguments來使用實參
+            // 只不過比較麻煩(一次只能找一個)
+            document.write(arguments[2]);//4
+
+
+            document.write(arguments.callee); //(印出fun()內所有的內容，包含註解)
+            document.write(arguments.callee == fun); //true
+        };
+
+        fun(2, 3, 4);
+
+    </script>
+</body>
+
+</html>

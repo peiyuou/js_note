@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // 創建一個陣列
+        // var arr = new Array;
+
+        // 使用字面量創建陣列
+        // 使用字面量創建陣列時，可以在創建時就指定數組中的元素
+        var arr = [1, 2, 3, 4, 5, 10];
+        document.write(arr); //1,2,3,4,5,10
+
+        // 使用構造函數創建陣列，也可同時添加元素
+        var arr2 = new Array(10, 20, 30);
+        document.write(arr2); //10,20,30
+
+
+        // 陣列中的元素可以是振義的數據類型，也可以是對象
+        var obj = {
+            name: "孫悟空"
+        };
+        arr[arr.length] = obj;
+        document.write(arr[6].name); //孫悟空
+
+        // 陣列中放物件
+        arr3 = [{ name: 'a' }, { name: 'b' }, { name: 'c' }];
+        document.write(arr3);//[object Object],[object Object],[object Object]
+        document.write(arr3[1].name); //b
+
+        // 陣列中也可以放函數
+        arr4 = [function () { document.write("我在arr4"); }, function () { }];
+        arr4[0]();//我在arr4
+
+        // 陣列中放陣列 = 二維陣列 (比較少用)
+        arr5 = [[1, 2, 3], [4, 5, 6,], [7, 8, 9]];
+        document.write(arr5[1]); //4,5,6
+
+    </script>
+</body>
+
+</html>

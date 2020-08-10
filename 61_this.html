@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 瀏覽器在調用函數時，每次都會像函數內部傳遞進一個隱含的參數
+        // 這個隱含參數就是this，this指向的是一個對像
+        // 這個對象稱為函數執行的上下文對象
+        // 根據函數的調用方式不同，this會指向不同的對象
+        // 1.以函數形式 fun();調用時，this永遠都是window
+        // 2.以方法形式obj.sayName();調用時，this就是調用方法的那個對象
+
+        function fun(a, b) {
+            // document.write(a + b);
+            document.write(this.name); //[object Window]
+        }
+
+        // 創建一個對象
+        var obj = {
+            name: '孫悟空',
+            sayName: fun
+        };
+
+        // document.write(obj.sayName == fun); //true
+
+        // 當fun內有 document.write(this);時
+        // fun(); //[object Window] 
+        obj.sayName(); //[object Object]
+
+        var obj2 = {
+            name: '沙和尚',
+            sayName: fun
+
+        };
+
+        // 當fun內有 document.write(this.name);
+        obj.sayName(); //孫悟空
+        obj2.sayName(); //沙和尚 
+
+        var name = "全域的name屬性";
+        fun(); //全域的name屬性
+
+
+    </script>
+</body>
+
+</html>
